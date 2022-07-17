@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.resolveConfig = void 0;
-var logger_1 = require("../logger");
-var logger = (0, logger_1.getLogger)().extend('resolve-config');
+const logger_1 = require("../logger");
+const logger = (0, logger_1.getLogger)().extend('resolve-config');
 /**
  * Resolve config from options and environment variables
  *
@@ -14,9 +14,9 @@ var logger = (0, logger_1.getLogger)().extend('resolve-config');
 function resolveConfig(options, env) {
     logger('reading envs');
     // Envs
-    var githubToken = env.GH_TOKEN || env.GITHUB_TOKEN;
+    const githubToken = env.GH_TOKEN || env.GITHUB_TOKEN;
     // Options
-    var closeMilestones = options.closeMilestones;
-    return { githubToken: githubToken, closeMilestones: closeMilestones };
+    const { closeMilestones } = options;
+    return { githubToken, closeMilestones };
 }
 exports.resolveConfig = resolveConfig;

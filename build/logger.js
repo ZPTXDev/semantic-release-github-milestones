@@ -4,11 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getLogger = void 0;
-var debug_1 = __importDefault(require("debug"));
-var logger;
+const debug_1 = __importDefault(require("debug"));
+let logger;
 function getLogger() {
     if (!logger) {
-        logger = (0, debug_1.default)("semantic-release-github-milestones");
+        logger = (0, debug_1.default)(`semantic-release-github-milestones`);
     }
     return logger;
 }

@@ -1,12 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.findMilestone = void 0;
-var lodash_1 = require("lodash");
+const lodash_1 = require("lodash");
 function compareMilestone(milestones, value) {
-    return (0, lodash_1.find)(milestones, function (_a) {
-        var milestoneName = _a.title;
-        return milestoneName === value;
-    });
+    return (0, lodash_1.find)(milestones, ({ title: milestoneName }) => milestoneName === value);
 }
 /**
  * Try to find a milestone by comparing it's title to:
@@ -23,10 +20,8 @@ function compareMilestone(milestones, value) {
  * @param {string} [channelName]
  * @return {*}  {(GithubMilestone | undefined)}
  */
-function findMilestone(milestones, _a) {
-    if (milestones === void 0) { milestones = []; }
-    var _b = _a === void 0 ? {} : _a, nextReleaseVersion = _b.nextReleaseVersion, nextReleaseName = _b.nextReleaseName, branchName = _b.branchName, branchChannel = _b.branchChannel;
-    var milestone;
+function findMilestone(milestones = [], { nextReleaseVersion, nextReleaseName, branchName, branchChannel, } = {}) {
+    let milestone;
     // Next release version
     milestone = compareMilestone(milestones, nextReleaseVersion);
     if (milestone) {

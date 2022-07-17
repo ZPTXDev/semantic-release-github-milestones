@@ -1,5 +1,4 @@
 import SemanticReleaseError from '@semantic-release/error';
-import AggregateError from 'aggregate-error';
 import gitUrlParse, {GitUrl} from 'git-url-parse';
 import {Context, GlobalConfig} from 'semantic-release';
 import {resolveConfig} from '../config/resolve-config';

@@ -1,4 +1,3 @@
-import AggregateError from 'aggregate-error';
 import {emojify} from 'node-emoji';
 import {Context, GlobalConfig} from 'semantic-release';
 import {getLogger} from '../logger';

@@ -1,10 +1,6 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.verifyMilestones = void 0;
-const aggregate_error_1 = __importDefault(require("aggregate-error"));
 const node_emoji_1 = require("node-emoji");
 const logger_1 = require("../logger");
 const find_milestone_1 = require("./find-milestone");
@@ -46,7 +42,7 @@ async function verifyMilestones(pluginConfig, context, milestones) {
         }
     }
     if (errors.length > 0) {
-        throw new aggregate_error_1.default(errors);
+        throw new AggregateError(errors);
     }
 }
 exports.verifyMilestones = verifyMilestones;
